@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Hello {{username}} </h1>
+    <p>
+      You are in a test with {{test}}
+    </p>
+
+    {% if is_premium %}
+        <p>
+          You are Premium.
+        </p>
+    {% else %}
+      <p>
+        The fronted is really bad but I didn't want to spend a lot of time.
+      </p>
+    {% endif %}
+
+    {% if skills %}
+      <p>List of skills:</p>
+      <ul>
+
+      {% for skill in skills %}    
+        <li> {{skill}} </li>
+      {% endfor %}  
+      </ul>
+    {% endif %}
+
+    <img src={{ url_for('static', filename='images/yop.jpg') }} alt="">
+
+{% endblock %}
